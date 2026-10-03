@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="deepSpace" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050510" />
+      <stop offset="50%" stop-color="#180a2a" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <radialGradient id="solarCorona" cx="30%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="30%" stop-color="#f59e0b" />
+      <stop offset="70%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#3b0764" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#deepSpace)" />
+
+  <!-- Blazing Solar Prominence Arcs -->
+  <circle cx="200" cy="520" r="260" fill="url(#solarCorona)" opacity="0.85"/>
+  <path d="M100 480 Q250 200 420 380" stroke="#fde047" stroke-width="16" fill="none" opacity="0.75" filter="blur(6px)"/>
+  <path d="M100 480 Q250 200 420 380" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.9"/>
+
+  <!-- The Solar Crest Board (The Representative Object) -->
+  <g transform="translate(340, 240) rotate(-35)">
+    <!-- Plasma Fin & Magnetic Wake -->
+    <path d="M-60,0 L-180,30 L-140,5 Z" fill="#f43f5e" opacity="0.8" filter="blur(6px)"/>
+    <path d="M-60,0 L-120,15 L-90,0 Z" fill="#fde047" opacity="0.9"/>
+
+    <!-- High-Velocity Surf Skiff Board -->
+    <path d="M-80,-15 Q0,-22 90,0 Q0,22 -80,15 Z" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+    <!-- Solar Flare Fins -->
+    <polygon points="30,-18 70,-45 50,-15" fill="#f59e0b" stroke="#fde047" stroke-width="1"/>
+    <polygon points="30,18 70,45 50,15" fill="#f59e0b" stroke="#fde047" stroke-width="1"/>
+    <!-- Center Core Deck -->
+    <ellipse cx="0" cy="0" rx="30" ry="8" fill="#38bdf8" />
+  </g>
+
+  <!-- Stars in Void -->
+  <circle cx="100" cy="100" r="2" fill="#ffffff" />
+  <circle cx="480" cy="90" r="3" fill="#ffffff" />
+  <circle cx="530" cy="180" r="2" fill="#ffffff" />
+
+  <!-- Representative Emblem Badge -->
+  <g transform="translate(300, 520)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="#180a2a" stroke="#f59e0b" stroke-width="1.5" opacity="0.95"/>
+    <text x="0" y="5" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#fde047" text-anchor="middle" letter-spacing="1">SOLAR CREST BOARD</text>
+  </g>
+</svg>

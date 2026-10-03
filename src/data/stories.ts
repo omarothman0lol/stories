@@ -1,0 +1,623 @@
+export type SectionType = "happy" | "sad" | "exciting" | "fantasy";
+
+export interface StoryCharacter {
+  name: string;
+  role: string;
+  archetype: string;
+  description: string;
+  quote: string;
+}
+
+export interface StoryRepresentative {
+  name: string;
+  symbol: string;
+  badge: string;
+  description: string;
+}
+
+export interface Story {
+  id: string;
+  title: string;
+  section: SectionType;
+  sectionTitle: string;
+  subtitle: string;
+  readingTime: string;
+  moodTags: string[];
+  representative: StoryRepresentative;
+  character: StoryCharacter;
+  image: string;
+  accentColor: string;
+  badgeColor: string;
+  quote: string;
+  paragraphs: string[];
+}
+
+export const SECTIONS: {
+  id: SectionType;
+  name: string;
+  tagline: string;
+  description: string;
+  color: string;
+  glowColor: string;
+  bgGradient: string;
+  borderColor: string;
+}[] = [
+  {
+    id: "happy",
+    name: "Happy Stories",
+    tagline: "Warmth, laughter, gentle sunlit mornings, and quiet gratitude.",
+    description: "Heartwarming chronicles of kindness, friendship, and the golden ordinary moments that remind us how tender life can be.",
+    color: "#f59e0b",
+    glowColor: "rgba(245, 158, 11, 0.25)",
+    bgGradient: "from-amber-950/30 via-slate-900 to-slate-950",
+    borderColor: "border-amber-500/30 hover:border-amber-400/60",
+  },
+  {
+    id: "sad",
+    name: "Sad Stories",
+    tagline: "Twilight rain, lingering melodies, memories, and quiet acceptance.",
+    description: "Poignant, contemplative tales that honor grief, nostalgia, and the gentle beauty found within what we have loved and let go.",
+    color: "#38bdf8",
+    glowColor: "rgba(56, 189, 248, 0.25)",
+    bgGradient: "from-sky-950/30 via-slate-900 to-slate-950",
+    borderColor: "border-sky-500/30 hover:border-sky-400/60",
+  },
+  {
+    id: "exciting",
+    name: "Exciting Stories",
+    tagline: "High winds, roaring engines, daring leaps, and electric pulses of destiny.",
+    description: "Thrilling odysseys of pulse-pounding speed, daring expeditions into uncharted depths, and soaring courage across the skies.",
+    color: "#f43f5e",
+    glowColor: "rgba(244, 63, 94, 0.25)",
+    bgGradient: "from-rose-950/30 via-slate-900 to-slate-950",
+    borderColor: "border-rose-500/30 hover:border-rose-400/60",
+  },
+  {
+    id: "fantasy",
+    name: "Fantasy Stories",
+    tagline: "Starlight tapestries, slumbering dragons, living glass, and ancient oceans.",
+    description: "Ethereal journeys into mystic woodlands, celestial observatories, and forgotten isles where myths breathe under twin moons.",
+    color: "#a855f7",
+    glowColor: "rgba(168, 85, 247, 0.25)",
+    bgGradient: "from-purple-950/30 via-slate-900 to-slate-950",
+    borderColor: "border-purple-500/30 hover:border-purple-400/60",
+  },
+];
+
+export const STORIES: Story[] = [
+  // ==================== HAPPY STORIES ====================
+  {
+    id: "bakers-secret-ingredient",
+    title: "The Baker's Secret Ingredient",
+    section: "happy",
+    sectionTitle: "Happy Stories",
+    subtitle: "A dash of morning sun and loaves that make weary wanderers smile.",
+    readingTime: "3 min read",
+    moodTags: ["Heartwarming", "Comfort", "Warmth"],
+    representative: {
+      name: "The Sun-Honey Loaf",
+      symbol: "🍞",
+      badge: "Golden Honey Crust",
+      description: "A warm braided brioche baked at daybreak, dusted with wildflower pollen and pure cheer.",
+    },
+    character: {
+      name: "Milo Finch",
+      role: "Village Apprentice Baker",
+      archetype: "The Warmhearted Artisan",
+      description: "A soft-spoken lad with flour on his apron who kneads his sourdough to the rhythm of birdsong outside his pantry window.",
+      quote: "Bread isn't merely flour and spring water. It's the promise of tomorrow's breakfast shared with someone you love.",
+    },
+    image: "/images/stories/bakers-secret-ingredient.svg",
+    accentColor: "#f59e0b",
+    badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+    quote: "When warmth is baked with patience, even the heaviest sorrow softens like butter in the sun.",
+    paragraphs: [
+      "Every dawn in the cobble-paved town of Oakhaven began with the unmistakable perfume of Milo Finch's brick hearth. Before the church bells struck five, Milo would already be stoking birch logs, their crackle filling the cozy stone kitchen with a steady, amber luminescence.",
+      "Travelers often wondered what made Milo’s round sourdough loaves so radiant. Old town tales whispered of hidden mountain spices, but Milo only laughed quietly. His secret was far simpler: he greeted each batch of dough as an old friend, whispering encouraging words as he folded the soft flour with clover honey and fresh mountain well water.",
+      "On one chilly Tuesday, a weary courier arrived in town with frost on his cloak and shoulders curved under the weight of unopened letters. He slumped onto Milo's porch bench, exhausted from crossing the high mountain passes.",
+      "Without a word, Milo handed the courier a freshly drawn honey bun, steam curling lazily into the crisp morning breeze. With the very first bite, the courier’s furrowed brow smoothed out, a sudden smile washing over his weathered face. For twenty minutes, time stood still as he tasted not just cinnamon, but unconditional kindness.",
+      "By noon, every single crumb in Milo’s shop had vanished. Children ran past with sticky fingers, neighbors lingered by the door trading stories, and Milo wiped down his flour-dusted counter with a calm, contented sigh. Happiness, he knew, was rarely found in grand triumphs—it was gathered slice by golden slice.",
+    ],
+  },
+  {
+    id: "lighthouse-of-whispering-bells",
+    title: "The Lighthouse of Whispering Bells",
+    section: "happy",
+    sectionTitle: "Happy Stories",
+    subtitle: "An old beacon that guided storm-lost gulls home with brass melodies.",
+    readingTime: "4 min read",
+    moodTags: ["Peaceful", "Sea Breeze", "Friendship"],
+    representative: {
+      name: "The Whispering Brass Bell",
+      symbol: "🔔",
+      badge: "Sea-Salt Brass Chime",
+      description: "An antique harbor bell tuned to low sea winds, singing peaceful melodies over rolling tides.",
+    },
+    character: {
+      name: "Captain Samira Cruz",
+      role: "Retired Navigator & Keeper",
+      archetype: "The Gentle Guardian",
+      description: "A retired sea navigator with silver-streaked braids, laugh lines around her eyes, and a pocketful of dried fish for wandering seabirds.",
+      quote: "No storm lasts forever when you know there is a light waiting for you on the cliff.",
+    },
+    image: "/images/stories/lighthouse-of-whispering-bells.svg",
+    accentColor: "#fbbf24",
+    badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+    quote: "The brightest light is never the flame in the tower; it is the open door beneath it.",
+    paragraphs: [
+      "High atop Cape Solitude stood an ivory lighthouse that had not burned coal in thirty years. Instead, Captain Samira Cruz had strung twenty-two brass bells across its winding gallery railings, each cast by local sailors to catch the gentle westerly breeze.",
+      "Whenever the ocean fog rolled in, thick and silent like sheep's wool, Samira would climb the circular iron stairs. She did not sound emergency horns; she allowed the ocean gusts to play a soothing, resonant lullaby across the water.",
+      "Fishermen ten miles out knew that sound. It was the whisper that guided them back to safe harbor, not through fear of jagged rocks, but through the calm reassurance of home. Alongside the fishermen came hundreds of migrating puffins and terns, resting safely on the parapet.",
+      "Every evening, local children gathered at the base of the tower with blankets and warm cider. Samira would lean over the balcony, tossing warm breadcrumbs to the gulls while recounting humorous tales of wandering seals and friendly dolphins she had encountered across the southern seas.",
+      "As dusk settled into velvet indigo, the chimes played their last soft chord. Samira would sit in her porch rocking chair, breathing the salty Atlantic air, smiling at the distant glowing lights of the village below. Her world was quiet, safe, and deeply peaceful.",
+    ],
+  },
+  {
+    id: "garden-of-paper-butterflies",
+    title: "The Garden of Paper Butterflies",
+    section: "happy",
+    sectionTitle: "Happy Stories",
+    subtitle: "Folds of parchment carrying kind wishes across cherry-blossom yards.",
+    readingTime: "3 min read",
+    moodTags: ["Joyful", "Creativity", "Innocence"],
+    representative: {
+      name: "The Origami Blue Monarch",
+      symbol: "🦋",
+      badge: "Washi Paper Monarch",
+      description: "A delicately folded paper butterfly crafted from washi paper inscribed with quiet blessings.",
+    },
+    character: {
+      name: "Grandpa Ren",
+      role: "Hillside Origami Master",
+      archetype: "The Benevolent Elder",
+      description: "An eighty-year-old grandfather whose nimble fingers transform scraps of mulberry paper into dancing creatures for all the village children.",
+      quote: "A single crease creates form; a kind thought gives it wings.",
+    },
+    image: "/images/stories/garden-of-paper-butterflies.svg",
+    accentColor: "#f59e0b",
+    badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+    quote: "Kindness is like paper origami: simple in its parts, breathtaking when opened.",
+    paragraphs: [
+      "In the hillside neighborhood of Cedar Slope, Grandpa Ren’s small courtyard was legendary. While other gardens grew peonies or plum trees, Ren’s branches were blooming with thousands of colorful origami butterflies tied by silk threads.",
+      "Each butterfly was hand-folded from patterned Japanese washi paper. Hidden beneath the tiny paper wings were short, handwritten notes: 'You are capable of wonderful things', 'May your day feel as light as cherry blossoms', and 'Someone is smiling because you exist.'",
+      "Whenever the spring wind danced through the plum branches, the entire garden rippled with soft rustling sounds, like a hundred thousand paper wings whispering secrets to the sky.",
+      "Neighborhood children knew that whenever they had a rough morning or lost a tooth, they could step through Ren’s creaky bamboo gate, pick one butterfly from the low-hanging branches, and read the blessing left especially for them.",
+      "One afternoon, a young girl named Mei brought Ren an origami crane she had spent hours trying to fold. It was slightly crumpled, its wings lopsided. Ren took it tenderly in his weathered hands, placing it on the highest branch of his favorite tree. 'Perfection is cold,' he murmured warmly. 'Love is always a little uneven, and that is why it flies.'",
+    ],
+  },
+  {
+    id: "pup-who-caught-a-cloud",
+    title: "The Pup Who Caught a Cloud",
+    section: "happy",
+    sectionTitle: "Happy Stories",
+    subtitle: "An inseparable bond between a golden hound and a fearless fledgling.",
+    readingTime: "3 min read",
+    moodTags: ["Playful", "Innocent", "Nature"],
+    representative: {
+      name: "The Low-Hanging Cloud",
+      symbol: "☁️",
+      badge: "Mist & Dandelion Fluff",
+      description: "A soft, puffy morning cloud that drifted down into the meadow, smelling of clover and dewdrops.",
+    },
+    character: {
+      name: "Barnaby & Pip",
+      role: "Meadow Explorers",
+      archetype: "The Purehearted Companions",
+      description: "Barnaby, a floppy-eared golden retriever with boundless affection, and Pip, a bold little robin who perches fearlessly between his ears.",
+      quote: "Woof! (Translated: Every hill is meant for rolling, and every puddle is a splash party!)",
+    },
+    image: "/images/stories/pup-who-caught-a-cloud.svg",
+    accentColor: "#fbbf24",
+    badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+    quote: "True companionship asks for no words, only a shared patch of sunshine.",
+    paragraphs: [
+      "High in the rolling meadows of Windward Valley, morning mist often pooled so low it looked like heaps of spun sugar resting on the emerald grass. To Barnaby the retriever, these were not simply clouds—they were magnificent floating sheep waiting to be chased.",
+      "With paws kicking up droplets of cool clover dew, Barnaby would charge across the hillside, his golden fur streaming in the wind. Perched comfortably between his ears was Pip, a thumb-sized fledgling robin who chirped excitedly, acting as navigator.",
+      "Whenever Barnaby reached the peak of the ridge, the cloud mist would swirl around his snout, cool and sweet. He would jump in joyful circles, snapping at the wisps of fog as if catching dandelion seeds.",
+      "Pip would take off from Barnaby's head, fluttering into the mist before diving back down with a triumphant chirp, landing right on Barnaby's black wet nose. The retriever would sneeze, tumble onto the soft clover, and roll onto his back with his tail thumping rhythmically against the earth.",
+      "Lying there side by side under the emerging morning sun, the dog and the bird watched the white clouds dissolve into clean sapphire sky. In the quiet green valley, there was nowhere else in the universe they needed to be.",
+    ],
+  },
+
+  // ==================== SAD STORIES ====================
+  {
+    id: "last-song-on-autumn-porch",
+    title: "The Last Song on the Autumn Porch",
+    section: "sad",
+    sectionTitle: "Sad Stories",
+    subtitle: "A cellist playing duets with the falling leaves of October.",
+    readingTime: "4 min read",
+    moodTags: ["Melancholy", "Nostalgia", "Healing"],
+    representative: {
+      name: "The Autumn Cello",
+      symbol: "🎻",
+      badge: "Varnished Maple Wood",
+      description: "An old maple cello carrying fifty years of shared symphonies, its strings tuned to the melancholy breeze.",
+    },
+    character: {
+      name: "Clara Vance",
+      role: "Retired Concert Cellist",
+      archetype: "The Elegiac Musician",
+      description: "A woman of quiet dignity with woolen shawls and silver hair, honoring the memory of her concert-partner husband through dusk sonatas.",
+      quote: "Music does not end when the bow lifts from the string; it continues in the silence that follows.",
+    },
+    image: "/images/stories/last-song-on-autumn-porch.svg",
+    accentColor: "#38bdf8",
+    badgeColor: "bg-sky-500/10 text-sky-300 border-sky-500/30",
+    quote: "Some silences are heavy not because they are empty, but because they are overflowing with memory.",
+    paragraphs: [
+      "Every October, when the sugar maples behind the old farmhouse turned the color of dying embers, Clara Vance brought her cello out to the screened-in porch. Beside her sat an empty wicker rocking chair, worn smooth where Arthur’s hand used to rest.",
+      "For forty years, they had toured the world's great symphony halls—Arthur with his violin, Clara with her deep-toned cello. When Arthur passed quietly into the autumn fog three years prior, Clara thought her music had died with him. But grief, she found, demanded its own kind of hymn.",
+      "She drew the horsehair bow across the C-string. The vibration groaned low and resonant, carrying across the cold damp grass. She played their favorite Brahms sonata, deliberately leaving pauses where Arthur's violin used to answer.",
+      "During those pauses, only the rustle of dry leaves and the drip of rain from the cedar eaves filled the porch. Yet Clara closed her eyes and felt the melody complete itself within her mind, as clear as morning frost.",
+      "As dusk faded into purple shadow, Clara laid the cello gently in its velvet case. A single golden leaf had drifted onto the bridge. She touched it with trembling fingers, not with bitter sorrow, but with the quiet, tender reverence of someone who was profoundly grateful to have been so deeply loved.",
+    ],
+  },
+  {
+    id: "echoes-in-the-clocktower",
+    title: "Echoes in the Clocktower",
+    section: "sad",
+    sectionTitle: "Sad Stories",
+    subtitle: "Counting every second in a fog-bound tower of promises.",
+    readingTime: "4 min read",
+    moodTags: ["Reflective", "Solitude", "Bittersweet"],
+    representative: {
+      name: "The Pendulum of Fog",
+      symbol: "🕰️",
+      badge: "Brass Pendulum Disk",
+      description: "A massive brass pendulum swinging in silent arcs through dust motes and memories.",
+    },
+    character: {
+      name: "Elias Mercer",
+      role: "Town Timekeeper",
+      archetype: "The Solitary Keeper",
+      description: "A solitary technician who understands the gears of clocks far better than the passage of human hearts, waiting for a ship that never docked.",
+      quote: "Clocks can measure seconds with cold precision, but they can never tell you how heavy an hour feels.",
+    },
+    image: "/images/stories/echoes-in-the-clocktower.svg",
+    accentColor: "#38bdf8",
+    badgeColor: "bg-sky-500/10 text-sky-300 border-sky-500/30",
+    quote: "Time moves forward for the entire world, yet in our hearts, we dwell in the hours we cannot let go.",
+    paragraphs: [
+      "Above the gray tiled roofs of Saint Jude’s Bay, the four clockfaces of the municipal tower stared out over the North Sea. Inside, Elias Mercer spent his days among ticking escapements, winding iron weights, and oiling brass tooth-wheels.",
+      "Twenty years ago, his sister had set sail on the merchant schooner *Caelum*, promising to return before the first snow. The ship never returned. Yet every year on the fourteenth of November, Elias oiled the main escapement with extra care, making sure not a single tick was lost.",
+      "The steady rhythm—*tick, tock, tick, tock*—was both company and punishment. In the quiet damp hours before dawn, the sound echoed through the tower’s wooden ribcage like a giant mechanical heartbeat.",
+      "Sometimes, travelers climbed the spiral staircase out of curiosity. Elias was always polite, answering questions about gear ratios and escapement teeth, but his eyes would continually drift toward the salt-sprayed bay below, searching the empty horizon.",
+      "As midnight struck twelve times, shivering the heavy bells in their belfry, Elias pressed his palm against the warm brass of the giant pendulum. He whispered the name he had never stopped saying into the dark, letting another year slip into the quiet sea.",
+    ],
+  },
+  {
+    id: "letters-to-the-north-wind",
+    title: "Letters to the North Wind",
+    section: "sad",
+    sectionTitle: "Sad Stories",
+    subtitle: "A lonely postmistress keeping the unread goodbyes of the world.",
+    readingTime: "3 min read",
+    moodTags: ["Quiet", "Winter", "Longing"],
+    representative: {
+      name: "The Wax-Sealed Blue Letter",
+      symbol: "✉️",
+      badge: "Frosted Parchment Envelope",
+      description: "A letter tied with faded twine, addressed to destinations that no map remembers.",
+    },
+    character: {
+      name: "Astrid Lind",
+      role: "Outpost Postmistress",
+      archetype: "The Keeper of Lost Words",
+      description: "Stationed at Station Zero on the edge of the tundra, Astrid safeguards undelivered letters, reading them aloud to the boreal wind so they are not forgotten.",
+      quote: "Words left unsaid turn to stones in our chests. I read them to the wind so they may finally rest.",
+    },
+    image: "/images/stories/letters-to-the-north-wind.svg",
+    accentColor: "#38bdf8",
+    badgeColor: "bg-sky-500/10 text-sky-300 border-sky-500/30",
+    quote: "Nothing is ever truly lost as long as someone, somewhere, speaks its name softly in the dark.",
+    paragraphs: [
+      "Station Zero was the northernmost postal depot in the province, a solitary cedar building nestled between jagged glaciers and whistling pine forests. Astrid Lind was its sole custodian.",
+      "Most mail moved through swiftly during summer, but every winter brought boxes of 'Return to Sender' letters—envelopes with addresses obscured by rain, recipients who had moved across continents, or letters sent to departed souls.",
+      "Rather than incinerating them, Astrid stored them in small pine drawers lined with dried lavender. Each evening, beside her iron woodstove, she would select one uncollected envelope, carefully unseal its wax with a bone knife, and read it softly by lamplight.",
+      "She read apologies never delivered, love confessions penned in hasty train station kiosks, and simple notes asking if a sick child had recovered. She spoke the sentences aloud into the quiet cabin, ensuring that these fragments of human sincerity did not die in silence.",
+      "When the great northern blizzard howled against her double-glazed windowpane, Astrid opened the high transom vent. The words mingled with the arctic wind, swept away across the frozen tundra toward the aurora borealis, carrying their unanswered love home at last.",
+    ],
+  },
+  {
+    id: "ceramic-kintsugi-heart",
+    title: "The Ceramic Kintsugi Heart",
+    section: "sad",
+    sectionTitle: "Sad Stories",
+    subtitle: "Mending shattered porcelain with liquid gold and quiet patience.",
+    readingTime: "4 min read",
+    moodTags: ["Poignant", "Resilience", "Stillness"],
+    representative: {
+      name: "The Golden Kintsugi Seam",
+      symbol: "🍵",
+      badge: "Lacquered Gold Seam",
+      description: "A restored ceramic teacup whose cracks shimmer with urushi lacquer mixed with pure gold powder.",
+    },
+    character: {
+      name: "Master Kenji",
+      role: "Ceramic Artisan",
+      archetype: "The Contemplative Healer",
+      description: "A stoic master craftsman who lost his family workshop in an earthquake, finding peace in the art of mending broken things instead of hiding their scars.",
+      quote: "Do not hide the fracture. The fracture is where the gold enters.",
+    },
+    image: "/images/stories/ceramic-kintsugi-heart.svg",
+    accentColor: "#38bdf8",
+    badgeColor: "bg-sky-500/10 text-sky-300 border-sky-500/30",
+    quote: "We are all broken vessels; what matters is how tenderly we join our pieces back together.",
+    paragraphs: [
+      "In a damp studio overlooking a mossy courtyard in Kyoto, Master Kenji worked in near-total silence. On his cedar workbench lay fragments of a celadon bowl—broken into seven jagged pieces by an accidental fall decades ago.",
+      "People often asked him why he took weeks to repair vessels that cost less than the gold lacquer used to mend them. Kenji would smile faintly, his calloused thumbs smoothing the edges of the porcelain.",
+      "'A vessel that has never broken is merely clean,' he would say in his raspy voice. 'A vessel that has broken and been reassembled with gold has survived time. It carries a history.'",
+      "As the afternoon drizzle fell against the paper shoji screens, Kenji applied the dark tree sap and dusted the hairline fracture with shimmering 24-karat gold powder. The gold highlighted every wound, turning what was once a tragic shattering into a luminous constellation of courage.",
+      "When he finished, he set the teacup upon the low wooden table. It was no longer pristine, but it possessed a quiet, heartbreaking grace. Kenji poured green tea into the bowl, held it in both palms, and let the warmth seep into his old bones.",
+    ],
+  },
+
+  // ==================== EXCITING STORIES ====================
+  {
+    id: "midnight-skyrunner",
+    title: "The Midnight Skyrunner",
+    section: "exciting",
+    sectionTitle: "Exciting Stories",
+    subtitle: "Riding solar thermals across floating cloud canyons in the storm.",
+    readingTime: "4 min read",
+    moodTags: ["Adrenaline", "Flight", "Speed"],
+    representative: {
+      name: "The Dawn Glider Wings",
+      symbol: "⚡",
+      badge: "Carbon-Titanium Wingtip",
+      description: "Ultra-light aerodynamic glider wings pulsing with luminescent violet ion trails.",
+    },
+    character: {
+      name: "Zara Kael",
+      role: "Canyon Cloud-Racer",
+      archetype: "The Fearless Daredevil",
+      description: "A quick-witted aerialist with goggles push-locked over wild dark curls, racing along jagged floating mesa cliffs with unmatched instincts.",
+      quote: "If you don't feel your heart pounding against your ribs, you're not flying—you're just falling slowly.",
+    },
+    image: "/images/stories/midnight-skyrunner.svg",
+    accentColor: "#f43f5e",
+    badgeColor: "bg-rose-500/10 text-rose-300 border-rose-500/30",
+    quote: "The sky doesn't belong to the timid; it yields only to those who dare plunge into the tempest.",
+    paragraphs: [
+      "The starting beacon detonated in a blinding flare of crimson magnesium, illuminating the mile-deep rift of the Aeolian Trench. Twelve wingsuits sliced off the edge of the launch platform simultaneously, plummeting into freefall at two hundred miles an hour.",
+      "Zara Kael didn’t open her stabilizer flaps. She kept her arms tucked tightly against her carbon-fiber harness, eyes locked onto the glowing rings suspended between the floating rock pillars ahead. The wind screamed past her helmet like a jet engine.",
+      "Directly in front of her, rival racer Vane attempted to cut across her trajectory to catch the vortex draft. Zara grinned inside her visor. Instead of dodging, she engaged her ion thrusters for a three-second burst, banking vertically through a crevice barely three feet wider than her wingspan.",
+      "Rock walls blurred into streaks of graphite. Lightning crackled across the cloud banks above, illuminating the final checkpoint gate suspended in midair over the raging thunderhead.",
+      "With five hundred yards remaining, Zara pulled a high-G inverted roll, caught the ascending thermal of the electrical storm, and burst through the checkered ring of laser light ahead of the pack. She deployed her deceleration chute, laughing aloud into the starry night sky as the cheers of twenty thousand spectators roared from the viewing docks.",
+    ],
+  },
+  {
+    id: "descent-of-abyssal-vault",
+    title: "The Descent of the Abyssal Vault",
+    section: "exciting",
+    sectionTitle: "Exciting Stories",
+    subtitle: "Diving seven miles beneath the ocean into ancient sunken ruins.",
+    readingTime: "4 min read",
+    moodTags: ["Expedition", "Deep Sea", "Mystery"],
+    representative: {
+      name: "The Abyssal Phosphor Crystal",
+      symbol: "💎",
+      badge: "Bioluminescent Core",
+      description: "A glowing ocean crystal recovered from the Marianas floor, pulsing with cyan energy.",
+    },
+    character: {
+      name: "Dax Sterling",
+      role: "Trench Salvage Specialist",
+      archetype: "The Rugged Explorer",
+      description: "A veteran deep-water diver piloting the titanium submersible *Nautilus-IX*, braving crushing pressures to uncover sunken pre-cataclysm temples.",
+      quote: "The abyss isn't empty. It's just holding its breath.",
+    },
+    image: "/images/stories/descent-of-abyssal-vault.svg",
+    accentColor: "#f43f5e",
+    badgeColor: "bg-rose-500/10 text-rose-300 border-rose-500/30",
+    quote: "When the pressure rises enough to crush steel, only your nerve keeps the hull intact.",
+    paragraphs: [
+      "At thirty-six thousand feet below the surface of the Pacific, sunlight had ceased to exist for billions of years. The titanium hull of *Nautilus-IX* groaned under the weight of eight tons per square inch, each shudder echoing through Dax Sterling’s boots.",
+      "Outside the viewing dome, headlights pierced the blackness to reveal not volcanic mud, but a colossal archway carved from seamless black obsidian. Bioluminescent siphonophores drifted like neon ghosts across carvings of sea serpent gods.",
+      "Suddenly, the proximity alarms shrieked. A seismic thermal plume erupted from the seabed fissure fifty meters to port, sending superheated water and sulfur clouds violently spinning the submarine.",
+      "Instruments flashed amber. 'Thruster three offline,' the computer chimed. Dax seized the manual hydraulic levers, overriding the automatic ballast. He spun the submarine’s bow into the rising thermal current, using the immense surge of pressure to shoot the vessel over the collapsing canyon wall.",
+      "His mechanical grappling claw snapped forward into the vault's central pedestal just before the cavern roof gave way, seizing the glowing cyan core artifact. Dax slammed the emergency ascent charges. With a thunderous boom, the submersible launched upward toward the distant sunlit surface, clutching the greatest oceanic discovery of the century.",
+    ],
+  },
+  {
+    id: "clockwork-locomotive-heist",
+    title: "The Clockwork Locomotive Heist",
+    section: "exciting",
+    sectionTitle: "Exciting Stories",
+    subtitle: "Rooftop leaps across a super-express train over a bottomless gorge.",
+    readingTime: "4 min read",
+    moodTags: ["Steampunk", "Suspense", "Acrobatics"],
+    representative: {
+      name: "The Emerald Chrono-Key",
+      symbol: "🗝️",
+      badge: "Brass Skeleton Key",
+      description: "An intricate clockwork key containing twenty interlocking brass cogs and an emerald laser diode.",
+    },
+    character: {
+      name: "Kora the Rook",
+      role: "Rooftop Infiltrator",
+      archetype: "The Agile Trickster",
+      description: "An acrobat clad in reinforced leather and magnetic grappling soles, sprinting across train roofs at eighty miles an hour with effortless balance.",
+      quote: "Never take the carriage door when the skylight offers a much more dramatic entrance.",
+    },
+    image: "/images/stories/clockwork-locomotive-heist.svg",
+    accentColor: "#f43f5e",
+    badgeColor: "bg-rose-500/10 text-rose-300 border-rose-500/30",
+    quote: "Speed is the only shield you need when the ground has vanished beneath your feet.",
+    paragraphs: [
+      "The *Goliath Express* was a half-mile of armor-plated steel, powered by three coal-furnace reactors thundering along the cliffside rails of Devil’s Spire at eighty-five miles per hour. Above it, rain fell in horizontal sheets.",
+      "Kora dropped from the trestle bridge above, her magnetic boots snapping to the ribbed iron roof of carriage seven with an electric thud. Steam hissed violently from the chimney stacks ahead, blinding her night goggles.",
+      "Automated sentry turrets swung toward her position with whirring gearboxes. Kora drew twin electromagnetic grapple cords, fired them into the bridge arches overhead, and swung clean over the line of gunfire, executing a mid-air somersault before crashing through the reinforced glass dome of the vault car.",
+      "Inside, the vault's clockwork combination lock was spinning rapidly, thirty seconds from locking down permanently. Kora slid across the polished mahogany floor, jammed her custom chronometer pick into the central gear, and twisted clockwise.",
+      "With a satisfying heavy *clack*, the vault popped open. Kora grabbed the Royal Star ruby cylinder, clipped it to her belt, and kicked open the side exit door just as the train entered the high mountain tunnel. She fired her skyhook into the trailing extraction zeppelin and hoisted into the clouds, vanishing without a trace.",
+    ],
+  },
+  {
+    id: "riders-of-the-solar-flare",
+    title: "Riders of the Solar Flare",
+    section: "exciting",
+    sectionTitle: "Exciting Stories",
+    subtitle: "Surfing incandescent plasma waves along the corona of a living star.",
+    readingTime: "4 min read",
+    moodTags: ["Cosmic", "High Energy", "Triumph"],
+    representative: {
+      name: "The Solar Crest Board",
+      symbol: "🏄‍♂️",
+      badge: "Plasma Shield Fin",
+      description: "A mag-lev solar skiff board with magnetic heat sinks capable of surfing million-degree coronal mass ejections.",
+    },
+    character: {
+      name: "Torin Vance",
+      role: "Stellar Surf Navigator",
+      archetype: "The Cosmic Voyager",
+      description: "An interplanetary pilot who lives for the radiant rush of solar coronas, riding waves of charged particles across deep stellar space.",
+      quote: "Stars don't just radiate heat. If you listen closely, they have a rhythm. You just have to match their beat.",
+    },
+    image: "/images/stories/riders-of-the-solar-flare.svg",
+    accentColor: "#f43f5e",
+    badgeColor: "bg-rose-500/10 text-rose-300 border-rose-500/30",
+    quote: "Stand upright when the sun roars, and you will understand what it means to be truly alive.",
+    paragraphs: [
+      "The corona of Star Helios-4 was a writhing ocean of million-degree golden fire. Prominences looped thousands of kilometers into the void, creating towering arches of glowing plasma that defied gravity and reason.",
+      "Torin Vance stood on the magnetic deck of his solar skiff, his thermal suit reflecting the blinding golden blaze. Behind him, the mothership warned over radio: 'Class-X flare detected! Abort run, Torin!'",
+      "Torin didn't abort. He locked his magnetic bindings, tilted his nose foil twenty degrees downward, and dropped directly down the face of a rising five-thousand-kilometer solar wave.",
+      "The rush was unlike anything known to earthbound mortals. Electromagnetic force rattled his teeth as pure energy surged beneath his feet, accelerating the skiff past Mach 40 within the solar magnetic corridor. Golden sparks whipped past in iridescent ribbons.",
+      "At the wave's crest, where plasma looped back toward the boiling photosphere, Torin banked hard against the magnetic curl, executing an impossible stellar aerial maneuver before slipping into the cool quantum vacuum of the shadow corridor. He emerged back into deep space triumphant, leaving a radiant golden wake that lingered against the darkness for hours.",
+    ],
+  },
+
+  // ==================== FANTASY STORIES ====================
+  {
+    id: "weaver-of-falling-constellations",
+    title: "The Weaver of Falling Constellations",
+    section: "fantasy",
+    sectionTitle: "Fantasy Stories",
+    subtitle: "Spinning fallen starlight into tapestries that foretell dawn dreams.",
+    readingTime: "4 min read",
+    moodTags: ["Mystical", "Celestial", "Wonder"],
+    representative: {
+      name: "The Stardust Loom",
+      symbol: "🌌",
+      badge: "Silver Weft Shuttle",
+      description: "An ivory loom strung with captured meteoric starlight that hums with gentle ancient prophecies.",
+    },
+    character: {
+      name: "Lyra Nightbloom",
+      role: "Celestial Weaver",
+      archetype: "The Star Whisperer",
+      description: "A maiden with silver-threaded hair and eyes that reflect nebulae, living in an ancient glass observatory atop Mount Whispering Pine.",
+      quote: "Stars do not fall because they are weak; they fall so they can be woven into dreams down below.",
+    },
+    image: "/images/stories/weaver-of-falling-constellations.svg",
+    accentColor: "#a855f7",
+    badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
+    quote: "Every thread of starlight remembers the eternity it traveled before finding its place in the cloth.",
+    paragraphs: [
+      "In the crystalline observatory atop Mount Whispering Pine, Lyra Nightbloom worked only when the constellations began to shed their silver dust. On moonless nights, shooting stars streaked across the violet firmament, dropping glowing filaments into the mountain tarn.",
+      "With a basket woven from willow reeds, Lyra scooped the fallen stardust from the calm waters. The threads sparkled like crushed diamonds, cool to the touch and fragrant with the scent of frozen ozone.",
+      "At her grand ivory loom, she spun the threads alongside silver wool. With every pass of her wooden shuttle, intricate pictures formed on the cloth: cities made of mother-of-pearl, forests of glass trees, and slumbering children smiling in their cribs.",
+      "Travelers who climbed the steep winding path to her tower were granted one glimpse of the unfinished tapestry. In its shimmering threads, each person saw not their future, but the truest, kindest version of who they could become.",
+      "When dawn cracked the eastern horizon with rose-gold light, the threads dissolved into soft ambient radiance that settled gently over the valley below, blessing all who slept with peaceful, wondrous dreams.",
+    ],
+  },
+  {
+    id: "tree-of-sleeping-dragons",
+    title: "The Tree of Sleeping Dragons",
+    section: "fantasy",
+    sectionTitle: "Fantasy Stories",
+    subtitle: "An ancient bough where sapphire drakes curl like sleeping kittens.",
+    readingTime: "4 min read",
+    moodTags: ["Enchanted", "Serenity", "Mythic"],
+    representative: {
+      name: "The Sleeping Sapphire Drake",
+      symbol: "🐉",
+      badge: "Azure Dragon Scale",
+      description: "A miniature winged dragon curled in glowing emerald moss, breathing tiny puffs of lavender mist.",
+    },
+    character: {
+      name: "Sylvan the Guardian",
+      role: "Ancient Bough Dryad",
+      archetype: "The Gentle Forest Spirit",
+      description: "A forest guardian whose skin carries the texture of birch bark, tending the slumber of primordial creatures nestled within the Elder Tree.",
+      quote: "Even the fiercest fire needs rest. In sleep, even dragons dream of springtime blossoms.",
+    },
+    image: "/images/stories/tree-of-sleeping-dragons.svg",
+    accentColor: "#a855f7",
+    badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
+    quote: "True power is not the roar that shakes the mountain, but the gentleness that keeps life safe in its sleep.",
+    paragraphs: [
+      "At the heart of the Whispering Woods grew the Great Elder Oak, its canopy so vast that it filtered rain into glowing violet droplets. Along its moss-cushioned boughs rested hundreds of miniature dragons, no larger than barn owls.",
+      "Their scales were of iridescent sapphire and amethyst, glowing softly in the twilight. When they breathed, they did not exhale destructive fire, but tiny rings of lavender-scented mist that drifted through the leaves like incense.",
+      "Sylvan walked the thick horizontal limbs barefoot, carrying an earthen bowl of honeydew and crushed blue lotus petals. Gently, he brushed fallen leaves from their folded wings, humming a melody as old as the soil itself.",
+      "Centuries ago, men with iron swords had marched into the forest seeking to hunt the beasts for their scales. But upon entering the clearing, the gentle warmth of the sleeping drakes and the tranquil perfume of the moss softened their angry hearts; the soldiers set down their weapons, lay in the grass, and fell into the most peaceful sleep of their lives.",
+      "Under the double moons of the summer solstice, Sylvan sat with a curled sapphire hatchling sleeping soundly in his lap, listening to the collective rhythmic breathing of the boughs. The forest was whole, protected not by walls, but by peace.",
+    ],
+  },
+  {
+    id: "alchemists-whispering-glass",
+    title: "The Alchemist's Whispering Glass",
+    section: "fantasy",
+    sectionTitle: "Fantasy Stories",
+    subtitle: "Bottling moments of pure wonder into luminous crystal spheres.",
+    readingTime: "4 min read",
+    moodTags: ["Alchemy", "Curiosity", "Magic"],
+    representative: {
+      name: "The Memory Glass Phial",
+      symbol: "🔮",
+      badge: "Iridescent Glass Phial",
+      description: "A hand-blown crystal sphere filled with swirling golden mist that replays joyous memories when held.",
+    },
+    character: {
+      name: "Ignis & Zephyr",
+      role: "Glassmith & Spark Sprite",
+      archetype: "The Arcane Craftsmen",
+      description: "Ignis, a bearded alchemist who blows molten starlight glass, and Zephyr, a chirping pocket-sized fire elemental who regulates the crucible flame.",
+      quote: "We do not capture time to imprison it; we preserve its light so travelers in dark valleys may find their way.",
+    },
+    image: "/images/stories/alchemists-whispering-glass.svg",
+    accentColor: "#a855f7",
+    badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
+    quote: "Every true memory is a drop of living light that never forgets the warmth that created it.",
+    paragraphs: [
+      "In the winding alchemical quarter of Veridia, the workshop of Ignis was easily recognized by the thousands of glass orbs suspended from its arched copper ceiling. Each orb glowed with a distinct hue: amber, cerulean, emerald, and lilac.",
+      "Ignis didn't brew ordinary potions. Together with Zephyr, his companion spark sprite who nestled inside a brass lantern, he gathered intangible wonders: the sound of first rain after a drought, the laughter of old friends reuniting, and the smell of old parchment books.",
+      "With a blowpipe crafted from enchanted silver, Ignis drew molten glass from his crucible. While the glass was glowing orange and pliable, he would whisper the memory into the hollow interior. Zephyr would breathe a tiny sparkle of elemental flame inside, sealing the memory forever.",
+      "When someone in town was gripped by dark despair or overwhelming grief, they would visit the workshop. Ignis would place a warm glass sphere in their hands. As their fingers warmed the crystal, the captured memory would swirl inside, projecting soothing golden light and soft harmonies into the room.",
+      "The visitor’s heavy sighs would turn to smiles of wonder. Ignis never charged gold for these vials. 'Joy shared,' he would tell them with a warm nod, 'is the only currency that multiplies when given away.'",
+    ],
+  },
+  {
+    id: "isle-where-sirens-sing-peace",
+    title: "The Isle Where Sirens Sing Peace",
+    section: "fantasy",
+    sectionTitle: "Fantasy Stories",
+    subtitle: "An oceanic sanctuary where storm songs are woven into lullabies.",
+    readingTime: "4 min read",
+    moodTags: ["Lullaby", "Oceanic", "Ethereal"],
+    representative: {
+      name: "The Siren's Moonlit Pearl",
+      symbol: "🐚",
+      badge: "Nacre Coral Conch",
+      description: "A polished iridescent seashell that murmurs ocean lullabies to quiet restless hearts.",
+    },
+    character: {
+      name: "Lady Thalassa",
+      role: "Sovereign Siren of the Reeds",
+      archetype: "The Pacifying Siren",
+      description: "An ethereal sea siren with hair like kelp ribbons and eyes of liquid sea-glass, using her voice to pacify raging oceanic typhoons.",
+      quote: "The sea was never angry; it was only lonely for a song that understood its depth.",
+    },
+    image: "/images/stories/isle-where-sirens-sing-peace.svg",
+    accentColor: "#a855f7",
+    badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
+    quote: "Even the wildest waves kneel upon the shore when met with gentleness.",
+    paragraphs: [
+      "Far beyond the shipping lanes of mortal kingdoms lay the Isle of Pearlescent Arches, where cliffs of white chalk plunged into bioluminescent turquoise waters. For centuries, sailors feared the sirens of these waters, believing their voices lured ships to doom.",
+      "Yet Lady Thalassa had long rewritten that fate. When storm winds whipped the ocean into thirty-foot fury, Thalassa rose to the arching coral reefs, opening her throat to the tempest.",
+      "Her voice was not a deceptive lure, but an ancient oceanic lullaby—a resonance of deep whale songs, rolling surf, and gentle summer rains. As the melody expanded across the churning waters, the wild breakers softened, the thunderous winds died down to a gentle breeze, and the dark storm clouds parted to reveal stars.",
+      "Shipwrecked sailors who washed ashore woke not on jagged stones, but on warm beds of glowing sea moss. Thalassa and her kin tended their cuts with medicinal pearls and sang soothing harmonies until rescue vessels arrived.",
+      "As the sun rose over the quiet lagoon, Thalassa sat upon an ivory reef, tossing shimmering water droplets into the air that caught the sunlight like floating diamonds. The vast ocean was at peace, and so was everyone who listened to her song.",
+    ],
+  },
+];

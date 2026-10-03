@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c29" />
+      <stop offset="50%" stop-color="#302b63" />
+      <stop offset="100%" stop-color="#24243e" />
+    </linearGradient>
+    <linearGradient id="starWeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)" />
+
+  <!-- Constellations in Deep Violet Sky -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.5">
+    <line x1="80" y1="80" x2="140" y2="120" />
+    <line x1="140" y1="120" x2="220" y2="90" />
+    <line x1="420" y1="70" x2="480" y2="130" />
+    <line x1="480" y1="130" x2="520" y2="90" />
+  </g>
+  <circle cx="80" cy="80" r="3" fill="#ffffff" />
+  <circle cx="140" cy="120" r="3.5" fill="#fbcfe8" />
+  <circle cx="220" cy="90" r="3" fill="#ffffff" />
+  <circle cx="420" cy="70" r="3" fill="#fbcfe8" />
+  <circle cx="480" cy="130" r="4" fill="#ffffff" />
+
+  <!-- The Celestial Stardust Loom (The Representative Object) -->
+  <g transform="translate(300, 270)">
+    <!-- Loom Frame -->
+    <rect x="-110" y="-120" width="220" height="240" rx="8" fill="none" stroke="#e9d5ff" stroke-width="8" opacity="0.85"/>
+    <rect x="-120" y="-130" width="240" height="18" fill="#c084fc" rx="4"/>
+    <rect x="-120" y="112" width="240" height="18" fill="#c084fc" rx="4"/>
+
+    <!-- Warp Strings (Vertical Starlight Filaments) -->
+    <line x1="-80" y1="-115" x2="-80" y2="115" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-50" y1="-115" x2="-50" y2="115" stroke="#ffffff" stroke-width="1.5" opacity="0.85"/>
+    <line x1="-20" y1="-115" x2="-20" y2="115" stroke="#ffffff" stroke-width="1.5" opacity="0.95"/>
+    <line x1="10" y1="-115" x2="10" y2="115" stroke="#ffffff" stroke-width="1.5" opacity="0.95"/>
+    <line x1="40" y1="-115" x2="40" y2="115" stroke="#ffffff" stroke-width="1.5" opacity="0.85"/>
+    <line x1="70" y1="-115" x2="70" y2="115" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Woven Nebula Fabric in center -->
+    <rect x="-90" y="-30" width="180" height="60" rx="4" fill="url(#starWeft)" opacity="0.7"/>
+
+    <!-- Shuttle (Weaving Stardust) -->
+    <polygon points="-70,-6 70,-6 85,0 70,6 -70,6 -85,0" fill="#fef08a" stroke="#d97706" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#ffffff" />
+  </g>
+
+  <!-- Glowing Stardust Droplets -->
+  <circle cx="240" cy="380" r="3" fill="#e9d5ff" filter="blur(1px)"/>
+  <circle cx="360" cy="390" r="3.5" fill="#fbcfe8" filter="blur(1px)"/>
+
+  <!-- Representative Emblem Badge -->
+  <g transform="translate(300, 520)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="#302b63" stroke="#c084fc" stroke-width="1.5" opacity="0.95"/>
+    <text x="0" y="5" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#f3e8ff" text-anchor="middle" letter-spacing="1">THE STARDUST LOOM</text>
+  </g>
+</svg>

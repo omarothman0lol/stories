@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#86efac" />
+    </linearGradient>
+    <radialGradient id="cloudGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="80%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.8" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#sky)" />
+
+  <!-- Rolling Meadow Hills -->
+  <path d="M-20 440 Q150 380 320 430 T640 410 L640 600 L-20 600 Z" fill="#22c55e" opacity="0.8"/>
+  <path d="M-20 480 Q200 420 420 490 T640 470 L640 600 L-20 600 Z" fill="#15803d" />
+
+  <!-- Fluffy Cloud Focus -->
+  <g transform="translate(300, 240)">
+    <circle cx="-70" cy="10" r="60" fill="url(#cloudGlow)" />
+    <circle cx="70" cy="10" r="55" fill="url(#cloudGlow)" />
+    <circle cx="0" cy="-25" r="75" fill="url(#cloudGlow)" />
+    <circle cx="-35" cy="20" r="55" fill="url(#cloudGlow)" />
+    <circle cx="35" cy="20" r="60" fill="url(#cloudGlow)" />
+  </g>
+
+  <!-- Golden Hound Silhouette Leaping -->
+  <g transform="translate(260, 360)">
+    <!-- Body & Fur -->
+    <ellipse cx="40" cy="40" rx="65" ry="32" fill="#d97706" transform="rotate(-25 40 40)"/>
+    <!-- Head -->
+    <circle cx="95" cy="5" r="28" fill="#f59e0b" />
+    <!-- Floppy Ear -->
+    <path d="M85 0 Q70 25 80 40 Q95 30 90 10 Z" fill="#b45309" />
+    <!-- Wagging Tail -->
+    <path d="M-20 60 Q-40 45 -45 25" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <!-- Joyful Nose -->
+    <circle cx="118" cy="8" r="6" fill="#18181b" />
+  </g>
+
+  <!-- Pip the Little Robin -->
+  <g transform="translate(370, 180)">
+    <ellipse cx="0" cy="0" rx="14" ry="10" fill="#991b1b" />
+    <circle cx="6" cy="-4" r="8" fill="#b91c1c" />
+    <polygon points="13,-5 20,-2 13,0" fill="#f59e0b" />
+    <circle cx="9" cy="-6" r="2" fill="#ffffff" />
+    <circle cx="10" cy="-6" r="1" fill="#000000" />
+  </g>
+
+  <!-- Dandelion Seeds -->
+  <circle cx="210" cy="180" r="3" fill="#ffffff" opacity="0.9"/>
+  <circle cx="420" cy="300" r="2.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="160" cy="280" r="2" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Representative Emblem Badge -->
+  <g transform="translate(300, 520)">
+    <rect x="-95" y="-18" width="190" height="36" rx="18" fill="#15803d" stroke="#86efac" stroke-width="1.5" opacity="0.95"/>
+    <text x="0" y="5" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#dcfce7" text-anchor="middle" letter-spacing="1">MEADOW CLOUD</text>
+  </g>
+</svg>
